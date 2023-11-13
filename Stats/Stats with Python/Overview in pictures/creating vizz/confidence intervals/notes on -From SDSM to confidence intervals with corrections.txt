@@ -1,0 +1,9 @@
+First corrections are set:
+
+Second corrections:
+
+Expansion to distinguish confidence intervals according to hypothesis:
+bigger, bigger equal
+smaller, smaller equal
+or
+exactly equal
