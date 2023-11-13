@@ -1,0 +1,44 @@
+Problems with messy data:
+
+"Inconsistent coding can result in splitting categories (*),
+missing data can contribute to inaccurate summaries,
+and typpos can make grouping by similar terms difficult."
+
+*( e.g. coding the extracted data e.g. some reserchers measured tree hight in meters and others in yards)
+
+Quality criteria and compromising errors:
+
+I. accuracy:
+
+- consistency in coding: 
+	> e.g. some resarchers measure height of trees in meters others in yards but htere is no unit in the record
+	> inconsitency in coding owould require to split categories
+
+- completedness:
+	> missing data can conribute  to inaccurate summaries (e.g. taking the average, median or mode when data is missing.
+
+- 
+
+1. Noise removal:
+	- typos
+	- inaccurate data
+	- not standardized data (insconsistend method of measurement).
+
+2.missing data (different kinds of missing: 
+	> missing completely at Random
+	> missing at Random (consistnently missing values based on the  value of another variable)
+	> Structurally missing (e.G. no count of fruits for trees with not fruits)
+
+3. Validity of a dataset:
+	=> practices comrpomising validity:
+	- the use of proxies
+	- the use of inappropriate time spans
+
+4. sample and representation:
+=> goal of a sample is to represent the whole population. WHen this is not the case we have a sampling error:
+
+
+5. Datatypes for further processing:
+
+	=> aim is to match informational variables (quantitative and categorical) with datatypes (string and object, int and float) to enable adecuate processing later on.
+

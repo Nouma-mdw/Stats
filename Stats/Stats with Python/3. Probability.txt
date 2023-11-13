@@ -1,0 +1,33 @@
+Probability helps to qunatify uncertainty:
+
+1) The union and intersection of two events
+--> the envets ocurring in the same random variable or ocurring on two separate random variables
+
+2) The complement of an event
+
+3) Mutually exclusive events
+
+4) Independent and dependent events
+--> for events ocurring on distinct random variables
+
+5) How to calculate the union of two events using the addition rule
+--> Probability for one or both events ocurring within a single experiment (random variable):
+		P(A or B) = P(A) * P(B) - P(A and B)
+
+6) What conditional probability is and how to calculate it
+
+7) How to calculate simultaneous events using the multiplication rule
+--> Probability for events ocurring on distinct random variables:
+		P(A and B) = P(A) * P(B|A) [P(B|A) := Probability of B given A happened before]
+
+8) How to use tree diagrams to map out possible outcomes
+
+
+9) What Bayes’ theorem is and how to calculate it
+--> calculating inverted conditional probabilities using the marginal probabilities
+	Given: P(B), P(-B), P(A|B) and P(A|-B)
+	Calculate: P(B|A) Probability of B given A happened before by
+		P(B|A) = P(A|B) * P(B) / (P(A|B) + P(A|-B))
+		[(P(A|B) + P(A|-B)) the marginal probability of A]	
+
+10) Application of conditional probability and Bayes’ theorem

@@ -1,0 +1,31 @@
+At the end of this module, you will be able to:
+
+Fit and interpret a simple linear regression model
+Fit and interpret a multiple linear regression model
+Compare models using:
+R-squared/adjusted R-squared
+F test
+Log Likelihood
+AIC/BIC
+Training and test sets
+
+
+finding a line wiht the least loss
+
+Use the following animation:
+<https://content.codecademy.com/programs/data-science-path/line-fitter/line-fitter.html>
+
+Givnen that a line ahs the equation y = x * m + b the equation 
+
+for real data is y_ = x * m + b + error
+
+As there can be different lines for every value that the parameters m and b take.
+To compare different possible linear models,
+we compare their errors.
+To compare all errors of one model with all errors of another model in a practical way,
+we sum up all errors of one linear model to one single value. This is done with a loss function.
+For example the square error function
+
+(error_1)^2 + (error_2)^2 + ... + (error_n)^2
+
+errors also can be called residuals

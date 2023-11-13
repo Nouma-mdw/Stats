@@ -1,0 +1,80 @@
+Investigating associations between two variables:
+
+#################################
+CASE 1_ One categorical and one quantiative variable.
+
+0. Divide data into categories of the categorical variable.
+
+Method_1 Using central tendency and spread to assess relationships -
+judging differences in central tendencies (mean or median) of categories.
+
+1. Calculate mean and median of quantitative variable for every category.
+2. Calculate the mean and median differences between different categories.
+	Note: 
+	We need to check the differences relative to data spread to intperet it meaningfully.
+
+CCC __Coding implementations:
+	getting the means for all categories of a categorical variable (cat_variable)
+	realtive to every other quantiative variable
+	df.groupby("cat_variable").mean()
+
+Method_2
+
+1. Check total and relative overlap of interquartile range (50 % of data) between categories.
+	=> Boxplots help for a quick overview.
+
+Method_3
+
+1. Inspecting overlapping histograms
+	Note:
+While overlapping histograms and side by side boxplots can convey similar information,
+histograms give us more detail and can be useful in spotting patterns 
+that were not visible in a box plot (eg., a bimodal distribution, a skew)
+
+CASE 1.2_ Generalizing to categorical non-binary variable with quantitative variable:
+
+Method_4 Pairwise comparison of categories from categorical variable and their respective statistics of quantitative variable.
+
+
+#################################
+CASE 2_ Two quantiative variables
+
+Method_5 
+
+6. Use scatter plots to examine correlations
+
+7. Use Covariance ("Sum of product of coordinates" divided by number of points) and pearsonr (from scipy.stats), to quantify strength of linear relationshoip.
+The measures above only indicate if there is a linear correlation.
+If there is no linear correlation, or a line with degree zero) both measures are zero. They also result in zero, when data is correlated, but in a non-linear way.
+
+CCC __Coding implementations:
+	use sns.pairplot(df) := seaborn makes pairplots for all variables,
+				choosing automatically the best option between plots
+				scatter, bar, hist
+
+#################################
+Case 3_ Two Categorical Variables
+
+Two binary variables:
+
+Method_6
+7.1 Contingency tables of frequencies (counts), where datapoints'
+row_index displays category of first variable they belong to and 
+column_index displays category of second variable they belong to..
+
+7.2 Alternatively contingency table of proportions (divide by total number of datapoints/observations)
+
+	7 Note
+Consider the Marginals:
+The porportion for respondents in each category of a single question is called a marginal porportion. Suppose, that for one variable one category has over 50% of all datapoints. This means that we can expect higher proportions in the bottom row, regardless of whether the questions are associated or not.
+
+8. Exected contingency Tables
+Create contingency table of expected proportions based on Marginals,
+for the case of no association between these variables:
+	- in each cell for the table, just multiply the values of respective Marginals
+
+9. The Chi square statistic:
+Sum of (value_contingency_table - value_expected_table)^2 / value_expected_table
+
+
+

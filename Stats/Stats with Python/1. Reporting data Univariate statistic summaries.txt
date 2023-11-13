@@ -1,0 +1,135 @@
+
+Reporting from quantitative data - choosing what to communicate:
+
+For central tendency:
+Should you use the mean, median, or mode? Here are some things you might consider:
+
+Case 1_
+For a list of salaries (500 employees at a company) describe the “typical” salary.
+If there are outliers (eg., there are ~10 executives who each make 20 times as much money as most other employees), the mean will be more impacted by those outliers than the median.
+
+Case 2_
+For a list of salaries (500 employees at a company) describe the “typical” salary.
+If there are distinct groups of employee salaries (eg., employees tend to fall into one of two categories: either low salaries or high salaries), then we might want to report two modes, rather than the mean or median — because the “middle” of these two groups is not actually a common salary.
+
+Case 3_
+For a list of rental fees, values might vary in any possible kind (from thousands of dollars to some cents).
+It might be that at most two equal values exit. In this case, as often for quantitative data the mode is no good option.
+
+Visualizing an entire distribution helps simultaneously investigate all possibilities and understand numerical summaries with more context.
+
+Case 4_
+Shop visit times during the day:
+This histogram, with limits (0, 6, 12, 18, 24), helps the store manager. From 6 pm until midnight is the busiest time. Is that thetime the manager should staff the most employees?
+
+He knows the store is busy when many people get off work, but the rush certainly doesn’t continue later than 9 pm.
+
+The histogram can't show this, because it has only 4 bins. When plotting a histogram, it’s essential to select bins that fully capture the trends in the underlying data. Often, this will require some guessing and checking. There isn’t much of a science to selecting bin size.
+
+How many bins do you think makes sense for this example? I would try 24 because there are 24 hours in a day.
+
+Looking at the hourly customer count histogram was more helpful to inform staffing decisions than knowing the average time that a customer arrives at the grocery store.
+
+
+CSSMO - Framework for analyzing Data on Histogramms
+
+	C - Center (mean, median)
+	S - Spread (standard deviation, interquartile range)
+	S - Skew	(symmetric, left, right)
+	M - Modality	(unimodal, bimodal, multimodal, uniform)
+	O - Outliers	
+
+	Notes on...
+		...central tendency, there is a variation of the mean called trim_mean
+			(scipy.stats.trim_mean(*data*, *trim_value*), see documentation at 			
+			(https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.trim_mean.html) 
+			applying the mean on the trimmed dataset, is applying the mean to a dataset with less outliers,
+			and can deliver a mean more similar to the  median
+
+The five number summary:
+
+	minimum, 
+	quartile_1 
+	quartile_2 
+	quartile_3
+	maximum
+
+
+boxplot 
+Visualization of:
+
+	- median, first quartile, and third quartile of a dataset
+	- length of the box for the interquartile range
+	- whiskers extend from the box 1.5 times interquartile range
+	- Outliers represented by dots outside of the whiskers
+	- Boxplots useful for comparing the spread of multiple datasets
+
+Boxplot vs Histograms
+
+	- The spread of the data (Modality, skewness,)
+	- The central tendency of the data (boxplot only median, histo median am mean and their relation due to skewness)
+	- Your ability to compare different datasets (boxplots allow for direct comparison on five numbers summary)
+	- The number of data points in each dataset (only histos, boxplots don't display any information about this)
+
+--------------------------------------------------------------------
+Reporting from categorical data - choosing what to communicate:
+
+Orinal categories have an order but  unequeal spacing.
+When translating ordinal categories into integers, those integers have equal spacing. The translation allows to use order of categories for calculating a statistic like the median - which relies only on ordering, not spacing.
+The attribute of equal-spacing from translated integers does not represent categories, therefore statstics like the mean, based on equal spacing are not applicable to ordinal data.
+
+Visualize Categorical Data:
+
+Visualization diffs in quantitative (histogram) vs categorical (bar chart)
+
+Bar charts are used for categorical variables, while histograms are used for quantitative data.
+Histograms must always be arranged in a specific order because they represent a range of numerical values. For a bar chart, each bar represents frequencies of category variables within a category. Unless the variable is ordinal, the bars could be arranged in any order.
+
+
+Visualizing frequencies or proportions within a single categorical variable:
+
+Use cases for a...
+...Bar Chart:
+ - distinct categories
+ - displaying frequencies of categories
+ - width equall for all bars,
+	but length and area are proportional to counts
+issues:
+	- do not display part whole relationships
+	- better for comparison across values
+
+
+...Pie Charts:
+
+ - arc length and area of each sector are proportional to the percentage of the circle it makes up.
+ - Display part_whole_relationship:
+	The sum of each sector adds up to 100 percent.
+
+issues with pie_charts:
+ - too many sectors make it hart to compare and to 
+
+Use case selection:
+
+USE_CASE_1
+_intrachart comparison (comparing values in a plot with each other)
+
+bar_charts:
+
+pie_charts:
+
+USE_CASE_2
+_interchart comparison (comparing values across multiple plots):
+
+bar charts:
+	+invariant start of figure, allows for comparison, variation only inlength
+pie_charts:
+	- varying start of figure, as one wedge gets larger, the next wedge starts at another angle.
+
+
+
+
+Understand when to use which of the two visualizations given dataset and a specific problem you are looking to solve
+
+Understand the pros and cons of each visualization when attempting to interpret findings
+
+Where can y
